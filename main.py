@@ -1,4 +1,5 @@
 from modules.fileManager import  *
+from modules.vehiculos import *
 
 def menu():
     print("\n=========== BIENVENIDO ===========")
@@ -20,6 +21,9 @@ while opc != 0:
     opc = menu()
     if opc == 1:
         print("Registrar vehiculo en exhibicion")
+        vehiculos = registrarVehiculo(vehiculos)
+        saveVehicles(vehiculos)
+
     elif opc == 2:
         print("Registrar venta de vehiculo")
     elif opc == 3:
