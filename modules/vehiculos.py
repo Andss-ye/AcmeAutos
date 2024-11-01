@@ -5,15 +5,33 @@ def registrarVehiculo(vehiculos):
     anioLanzamiento = int(input("\nEscriba el año de lanzamiento del vehiculo: "))
 
     if codigo not in vehiculos:
-        vehiculos[codigo] = {
+        vehiculos[str(codigo)] = {
             "marca": marca,
             "modelo": modelo,
             "año lanzamiento": anioLanzamiento
         }
 
-        print(f"Se registro correctamente el vehiculo {modelo}")
+        print(f"\nSe registro correctamente el vehiculo {modelo}")
         return vehiculos
     
     else:
-        print("No se pudo registrar este vehiculo por que ya se encuentra registrado")
+        print("\nNo se pudo registrar este vehiculo por que ya se encuentra registrado")
+        return vehiculos
+    
+def registrarVentas(vehiculos):
+    codigo = int(input("\nEscriba el codigo del vehiculo: "))
+    fecha = input("\nIngrese la fecha de la venta de los vehiculo: ")
+    cantidad = int(input("\nIngrese la cantidad vendida: "))
+    
+    if codigo in vehiculos:
+        vehiculos[str(codigo)]["venta"].append({
+            "fecha": fecha,
+            "cantidad": cantidad
+        })
+
+        print(f"\nSe registro correctamente la venta de {vehiculos["codigo"]["modelo"]}")
+        return vehiculos
+    
+    else:
+        print("\nNo se pudo registrar esta venta por que no exite ese vehiculo")
         return vehiculos
