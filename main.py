@@ -1,3 +1,6 @@
+from modules.fileManager import  *
+from modules.vehiculos import *
+
 def menu():
     print("\n=========== BIENVENIDO ===========")
     print("1. Registrar vehiculo en exhibicion")
@@ -9,12 +12,18 @@ def menu():
     opc = int(input("Ingrese una opcion: "))
     return opc
 
+vehiculos = loadVehicles()
+ventas = loadSells()
+
 opc = 10
 
 while opc != 0:
     opc = menu()
     if opc == 1:
         print("Registrar vehiculo en exhibicion")
+        vehiculos = registrarVehiculo(vehiculos)
+        saveVehicles(vehiculos)
+
     elif opc == 2:
         print("Registrar venta de vehiculo")
     elif opc == 3:
