@@ -1,3 +1,5 @@
+from modules.fileManager import  *
+
 def menu():
     print("\n=========== BIENVENIDO ===========")
     print("1. Registrar vehiculo en exhibicion")
@@ -8,6 +10,9 @@ def menu():
     print("=================================")
     opc = int(input("Ingrese una opcion: "))
     return opc
+
+vehiculos = loadVehicles()
+ventas = loadSells()
 
 opc = 10
 
