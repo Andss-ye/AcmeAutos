@@ -17,22 +17,26 @@ vehiculos = loadVehicles()
 opc = 10
 
 while opc != 0:
-    opc = menu()
-    if opc == 1:
-        print("Registrar vehiculo en exhibicion")
-        vehiculos = registrarVehiculo(vehiculos)
-        saveVehicles(vehiculos)
+    try:
+        opc = menu()
+        if opc == 1:
+            print("Registrar vehiculo en exhibicion")
+            vehiculos = registrarVehiculo(vehiculos)
+            saveVehicles(vehiculos)
 
-    elif opc == 2:
-        print("Registrar venta de vehiculo")
-        vehiculos = registrarVentas(vehiculos)
-        saveVehicles(vehiculos)
+        elif opc == 2:
+            print("Registrar venta de vehiculo")
+            vehiculos = registrarVentas(vehiculos)
+            saveVehicles(vehiculos)
 
-    elif opc == 3:
-        print("Listar vehiculos")
-    elif opc == 4:
-        print("Generar reporte de ventas por mes")
-    elif opc == 0:
-        print("Exit")
-    else:
-        print("Opcion incorrecta")
+        elif opc == 3:
+            print("Listar vehiculos")
+        elif opc == 4:
+            print("Generar reporte de ventas por mes")
+        elif opc == 0:
+            print("Exit")
+        else:
+            print("\nOpcion incorrecta, solo se permite de 0-4")
+
+    except ValueError:
+        print("\nDigite bien, solo se permiten numeros")
