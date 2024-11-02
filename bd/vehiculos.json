@@ -1,1 +1,23 @@
-{}
+{
+    "002": {
+        "marca": "ferrari",
+        "modelo": "ferrari classic",
+        "a\u00f1o lanzamiento": 1919,
+        "ventas": []
+    },
+    "001": {
+        "marca": "Mazda",
+        "modelo": "mazda 2",
+        "a\u00f1o lanzamiento": 2024,
+        "ventas": [
+            {
+                "fecha": "20/10/01",
+                "cantidad": 20
+            },
+            {
+                "fecha": "10/01/24",
+                "cantidad": 20
+            }
+        ]
+    }
+}
