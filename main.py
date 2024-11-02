@@ -33,6 +33,9 @@ while opc != 0:
             print("Listar vehiculos")
         elif opc == 4:
             print("Generar reporte de ventas por mes")
+            report = reporteVentas(vehiculos)
+            sellsReport(report)
+
         elif opc == 0:
             print("Exit")
         else:
