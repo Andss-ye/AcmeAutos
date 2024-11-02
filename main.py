@@ -13,7 +13,6 @@ def menu():
     return opc
 
 vehiculos = loadVehicles()
-ventas = loadSells()
 
 opc = 10
 
