@@ -1,5 +1,5 @@
 def registrarVehiculo(vehiculos):
-    codigo = int(input("\nEscriba el codigo del vehiculo: "))
+    codigo = str(input("\nEscriba el codigo del vehiculo: "))
     marca = input("\nEscriba la marca del vehiculo: ")
     modelo = input("\nEscriba el modelo del vehiculo: ")
     anioLanzamiento = int(input("\nEscriba el año de lanzamiento del vehiculo: "))
