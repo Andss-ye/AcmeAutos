@@ -26,6 +26,9 @@ while opc != 0:
 
     elif opc == 2:
         print("Registrar venta de vehiculo")
+        vehiculos = registrarVentas(vehiculos)
+        saveVehicles(vehiculos)
+
     elif opc == 3:
         print("Listar vehiculos")
     elif opc == 4:
