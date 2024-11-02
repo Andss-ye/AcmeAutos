@@ -8,7 +8,8 @@ def registrarVehiculo(vehiculos):
         vehiculos[codigo] = {
             "marca": marca,
             "modelo": modelo,
-            "año lanzamiento": anioLanzamiento
+            "año lanzamiento": anioLanzamiento,
+            "ventas": []
         }
 
         print(f"Se registro correctamente el vehiculo {modelo}")
