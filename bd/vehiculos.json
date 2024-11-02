@@ -1,7 +1,14 @@
 {
     "1": {
-        "marca": "mazda",
-        "modelo": "mazda 2",
-        "a\u00f1o lanzamiento": 2024
+        "marca": "andres",
+        "modelo": "sdjfksd",
+        "a\u00f1o lanzamiento": 222,
+        "ventas": []
+    },
+    "001": {
+        "marca": "ajdkf",
+        "modelo": "df",
+        "a\u00f1o lanzamiento": 2033,
+        "ventas": []
     }
 }
