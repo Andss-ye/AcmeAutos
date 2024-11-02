@@ -46,3 +46,18 @@ def registrarVentas(vehiculos):
     else:
         print("\nNo se pudo registrar esta venta por que no exite ese vehiculo")
         return vehiculos
+    
+def reporteVentas(vehiculos):
+    reporte = {}
+    for vehiculo in vehiculos.values():
+        ventas = vehiculo["ventas"]
+        for venta in ventas:
+            fecha = venta["fecha"]
+            cantidad = venta["cantidad"]
+            mesAndAnio = datetime.strptime(fecha, "%d/%m/%Y").strftime("%m/%Y")
+            if mesAndAnio in reporte:
+                reporte[mesAndAnio] += cantidad
+            else:
+                reporte[mesAndAnio] = cantidad
+
+    return reporte
