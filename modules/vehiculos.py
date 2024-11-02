@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def registrarVehiculo(vehiculos):
     codigo = str(input("\nEscriba el codigo del vehiculo: "))
     marca = input("\nEscriba la marca del vehiculo: ")
@@ -21,7 +23,15 @@ def registrarVehiculo(vehiculos):
     
 def registrarVentas(vehiculos):
     codigo = str(input("\nEscriba el codigo del vehiculo: "))
-    fecha = input("\nIngrese la fecha de la venta de los vehiculo: ")
+    fecha = input("\nIngrese la fecha de la venta del vehiculo (DD/MM/YYYY): ")
+
+    while True:
+        try:
+            fecha = datetime.strptime(fecha, "%d/%m/%Y").strftime("%d/%m/%Y")
+            break
+        except ValueError:
+            fecha = input("Formato de fecha invalido. Asegúrate de usar el formato DD/MM/YYYY: ")
+
     cantidad = int(input("\nIngrese la cantidad vendida: "))
     
     if codigo in vehiculos:
