@@ -46,3 +46,12 @@ def registrarVentas(vehiculos):
     else:
         print("\nNo se pudo registrar esta venta por que no exite ese vehiculo")
         return vehiculos
+    
+def vehiculosExhibicion(vehiculos):
+    report = []
+    print(f'CODIGO'.ljust(15) + 'MARCA'.ljust(15) + 'MODELO'.ljust(25) + 'AÑO DE LANZAMIENTO'.ljust(10))
+    for codigo, vehiculo in vehiculos.items():
+        print(f'{str(codigo).ljust(15)}{str(vehiculo['marca']).ljust(15)}{str(vehiculo['modelo']).ljust(25)}{str(vehiculo['año lanzamiento']).ljust(15)}')
+        report.append([codigo, vehiculo['marca'], vehiculo['modelo'], vehiculo['año lanzamiento']])
+
+    return report
