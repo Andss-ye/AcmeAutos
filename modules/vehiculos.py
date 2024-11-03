@@ -55,3 +55,19 @@ def vehiculosExhibicion(vehiculos):
         report.append([codigo, vehiculo['marca'], vehiculo['modelo'], vehiculo['año lanzamiento']])
 
     return report
+
+    
+def reporteVentas(vehiculos):
+    reporte = {}
+    for vehiculo in vehiculos.values():
+        ventas = vehiculo["ventas"]
+        for venta in ventas:
+            fecha = venta["fecha"]
+            cantidad = venta["cantidad"]
+            mesAndAnio = datetime.strptime(fecha, "%d/%m/%Y").strftime("%m/%Y")
+            if mesAndAnio in reporte:
+                reporte[mesAndAnio] += cantidad
+            else:
+                reporte[mesAndAnio] = cantidad
+
+    return reporte

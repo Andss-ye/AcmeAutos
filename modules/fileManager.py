@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 import csv 
 
@@ -21,3 +22,8 @@ def reportExibition(report):
         writer = csv.writer(file)
         writer.writerow(['codigo', 'marca', 'modelo', 'año de lanzamiento'])
         writer.writerows(report)
+
+def sellsReport(report):
+    date = datetime.now().strftime('%d-%m-%Y')
+    with open(f'bd/reporte_{date}.json', 'w') as file:
+        json.dump(report, file, indent=4)
