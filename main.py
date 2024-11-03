@@ -6,7 +6,7 @@ def menu():
     print("1. Registrar vehiculo en exhibicion")
     print("2. Registrar venta de vehiculo")
     print("3. Listar vehiculos")
-    print("3. Generar reporte de ventas por mes")
+    print("4. Generar reporte de ventas por mes")
     print("0. Exit")
     print("=================================")
     opc = int(input("Ingrese una opcion: "))
@@ -29,8 +29,11 @@ while opc != 0:
             vehiculos = registrarVentas(vehiculos)
             saveVehicles(vehiculos)
 
-        elif opc == 3:
+        elif opc == 3: 
             print("Listar vehiculos")
+            report = vehiculosExhibicion(vehiculos)
+            reportExibition(report)
+
         elif opc == 4:
             print("Generar reporte de ventas por mes")
         elif opc == 0:
