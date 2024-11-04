@@ -25,5 +25,10 @@ def reportExibition(report):
 
 def sellsReport(report):
     date = datetime.now().strftime('%d-%m-%Y')
-    with open(f'bd/reporte_{date}.json', 'w') as file:
-        json.dump(report, file, indent=4)
+    with open(f'bd/reporte_{date}.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Mes/Año", "Cantidad Vendida"])  # Escribir encabezado
+        for mesAnio, cantidad in report.items():
+            writer.writerow([mesAnio, cantidad])  # Escribir cada fila del reporte
+
+    print(f"Reporte exportado a 'bd/reporte_{date}.csv' exitosamente.")
