@@ -18,7 +18,8 @@ def saveVehicles(vehiculos):
         json.dump(vehiculos, file, indent=4)
 
 def reportExibition(report):
-    with open('bd/report_Exibition.csv', mode='w', newline='') as file:
+    date = datetime.now().strftime('%d-%m-%Y')
+    with open(f'bd/report_Exibition_{date}.csv', mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['codigo', 'marca', 'modelo', 'año de lanzamiento'])
         writer.writerows(report)
