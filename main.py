@@ -30,12 +30,10 @@ while opc != 0:
             saveVehicles(vehiculos)
 
         elif opc == 3: 
-            print("Listar vehiculos")
             report = vehiculosExhibicion(vehiculos)
             reportExibition(report)
 
         elif opc == 4:
-            print("Generar reporte de ventas por mes")
             report = reporteVentas(vehiculos)
             sellsReport(report)
 
